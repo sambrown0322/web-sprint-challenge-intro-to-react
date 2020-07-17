@@ -1,8 +1,9 @@
 // Write your Character component here
-import React, { useState } from "react";
-import axios from "axios";
+import React from "react";
+
 // import "./App.css";
 import styled from "styled-components";
+// import CharacterInfo from "./CharacterInfo";
 
 const CardContainer = styled.div`
   display: flex;
@@ -27,11 +28,12 @@ const CardContainer = styled.div`
     }
     &:hover {
       width: 40%;
-      /* color: navy;
-      transition: all 0.2s ease-in-out; */
+      color: navy;
+      transition: all 0.2s ease-in-out;
+      animation-timing-function: ease-in-out;
       animation-direction: alternate;
       animation-name: animate;
-      animation-duration: 3s;
+      animation-duration: 2s;
       animation-iteration-count: infinite;
     }
     h1 {
@@ -52,6 +54,7 @@ export default function Character(props) {
           <div key={result.id}>
             <h1>Name: {result.name}</h1>
             <img src={result.image} alt={result.name} />
+            {/* <CharacterInfo characterInfo={characterInfo} /> */}
             <h3>Location: {result.location.name}</h3>
             <h3>Species: {result.species}</h3>
             <h3>Gender: {result.gender}</h3>
